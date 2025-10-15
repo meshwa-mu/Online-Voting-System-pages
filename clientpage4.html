@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vote - VoteSecure</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="d-flex flex-column min-vh-100 bg-light">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="Client Side-1.html">VoteSecure</a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="clientpage5.html">Results</a></li>
+          <li class="nav-item"><a class="nav-link text-warning" href="clientpage2.html">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Voting -->
+  <main class="container flex-grow-1 py-5">
+    <h2 class="text-center mb-4">Cast Your Vote</h2>
+    <div class="row g-4 justify-content-center">
+      <div class="col-md-4">
+        <div class="card shadow">
+          <div class="card-body text-center">
+           <img src="c:\Users\Meshwa\Downloads\Candidate A.jpg" alt="Candidate A" class="img-fluid mb-3" style="max-height:150px; object-fit:contain;">
+            <h5 class="card-title">Bharatiya Janata Party</h5>
+            <button class="btn btn-primary vote-btn" data-name="Candidate A">Vote</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow">
+          <div class="card-body text-center">
+            <img src="c:\Users\Meshwa\Downloads\Candidate B.jpg" alt="Candidate B" class="img-fluid mb-3" style="max-height:150px; object-fit:contain;">
+            <h5 class="card-title">Congrees Party</h5>
+            <button class="btn btn-primary vote-btn" data-name="Candidate B">Vote</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card shadow">
+          <div class="card-body text-center">
+            <img src="c:\Users\Meshwa\Downloads\Candidate c.jpg" alt="Candidate C" class="img-fluid mb-3" style="max-height:150px; object-fit:contain;">
+            <h5 class="card-title">Aam Aadmi Party</h5>
+            <button class="btn btn-primary vote-btn" data-name="Candidate C">Vote</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-dark text-light text-center py-3 mt-auto">
+    <p>&copy; 2023 VoteSecure. Your vote matters.</p>
+  </footer>
+
+  <!-- Modal -->
+  <div class="modal fade" id="voteModal" tabindex="-1">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Confirm Vote</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+        <div class="modal-body">
+          Are you sure you want to vote for <span id="candidateName"></span>?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-success" id="confirmVote">Confirm</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    let selectedCandidate = "";
+    const modal = new bootstrap.Modal(document.getElementById('voteModal'));
+    const candidateName = document.getElementById('candidateName');
+    const confirmBtn = document.getElementById('confirmVote');
+
+    document.querySelectorAll('.vote-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        selectedCandidate = btn.dataset.name;
+        candidateName.textContent = selectedCandidate;
+        modal.show();
+      });
+    });
+
+    confirmBtn.addEventListener('click', () => {
+      alert(`You voted for ${selectedCandidate}! Redirecting to results...`);
+      modal.hide();
+      window.location.href = "clientpage5.html";
+    });
+  </script>
+</body>
+</html>
