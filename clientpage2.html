@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - VoteSecure</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { font-family: Arial, sans-serif; background-color: #f8f9fa; }
+    .sidebar { min-height: 100vh; background: linear-gradient(180deg, #e6e6fa, #dcd6f7); padding-top: 20px; }
+    .sidebar h4 { color: #4a3f91; font-weight: bold; text-align: center; }
+    .sidebar a { display: block; color: #4a3f91; padding: 10px 20px; text-decoration: none; border-radius: 6px; margin: 5px 10px; }
+    .sidebar a:hover, .sidebar a.active { background: #b8aef5; color: white; }
+    .content { padding: 20px; }
+  </style>
+</head>
+<body>
+<div class="container-fluid">
+  <div class="row">
+    <!-- Sidebar -->
+    <nav class="col-md-2 sidebar">
+      <h4>🗳️ Admin</h4>
+      <a href="AdminDashboard.html" class="active">Dashboard</a>
+      <a href="Adminsidepage2.html">Manage Voters</a>
+      <a href="Adminsidepage3.html">Manage Candidates</a>
+      <a href="Adminsidepage4.html">Manage Elections</a>
+      <a href="Adminsidepage5.html">Assign Candidates</a>
+      <a href="Adminsidepage6.html">View Results</a>
+      <a href="Adminsidepage7.html">Reports</a>
+      <a href="Adminsidepage8.html">Settings</a>
+      <a href="Adminsidepage9.html" class="text-danger">Logout</a>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="col-md-10 content">
+      <nav class="navbar navbar-light bg-light mb-4 rounded shadow-sm">
+        <div class="container-fluid">
+          <span class="navbar-brand fw-bold text-primary">Admin Dashboard</span>
+        </div>
+      </nav>
+
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card shadow-sm text-center p-3">
+            <h5>Manage Voters</h5>
+            <p>Add, edit, and delete voter information.</p>
+            <a href="Adminsidepage2.html" class="btn btn-primary">Go</a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card shadow-sm text-center p-3">
+            <h5>Manage Candidates</h5>
+            <p>Add, edit, and delete candidates with party and active status.</p>
+            <a href="Adminsidepage3.html" class="btn btn-primary">Go</a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card shadow-sm text-center p-3">
+            <h5>Manage Elections</h5>
+            <p>Create elections and manage start/end dates.</p>
+            <a href="Adminsidepage4.html" class="btn btn-primary">Go</a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card shadow-sm text-center p-3">
+            <h5>Assign Candidates</h5>
+            <p>Assign candidates to elections.</p>
+            <a href="Adminsidepage5.html" class="btn btn-primary">Go</a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card shadow-sm text-center p-3">
+            <h5>View Results</h5>
+            <p>View election results and winners.</p>
+            <a href="Adminsidepage6.html" class="btn btn-primary">Go</a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card shadow-sm text-center p-3">
+            <h5>Reports</h5>
+            <p>Generate voter, candidate, election, and result reports.</p>
+            <a href="Adminsidepage7.html" class="btn btn-primary">Go</a>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
